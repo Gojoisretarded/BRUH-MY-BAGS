@@ -1032,12 +1032,20 @@ body {
 
 @media (max-width: 992px) {
   .hero {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     text-align: center;
     padding-top: 30px;
     min-height: auto;
+    gap: 32px;
+  }
+  .hero-visual {
+    order: 1;
+    width: 100%;
+    margin-top: 10px;
   }
   .hero-content {
+    order: 2;
     align-items: center;
     text-align: center;
   }
