@@ -989,15 +989,23 @@ body {
   color: var(--text-dark);
   border: var(--border-width) solid var(--border-color);
   box-shadow: 4px 4px 0px #ffffff;
-  padding: 14px 18px;
+  padding: 14px 16px;
   text-decoration: none;
   font-family: var(--font-meme);
   font-size: 0.85rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
   transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.platform-card span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .platform-card:hover {
@@ -1068,7 +1076,8 @@ body {
 .htb-container,
 .ticker-grid,
 .meme-gallery-grid,
-.social-cards-grid {
+.social-cards-grid,
+.platforms-grid {
   width: 100%;
 }
 
@@ -1079,7 +1088,8 @@ body {
 .htb-container > *,
 .ticker-grid > *,
 .meme-gallery-grid > *,
-.social-cards-grid > * {
+.social-cards-grid > *,
+.platforms-grid > * {
   min-width: 0;
 }
 
@@ -1122,6 +1132,10 @@ body {
   }
   .social-cards-grid {
     grid-template-columns: 1fr;
+  }
+  .platforms-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
 }
 
@@ -1397,5 +1411,14 @@ body {
   }
   .ticker-info-box {
     padding: 24px 16px;
+  }
+  .platforms-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .platform-card {
+    font-size: 0.85rem;
+    padding: 12px 16px;
+    box-shadow: 4px 4px 0px #ffffff;
   }
 }
